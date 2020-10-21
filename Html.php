@@ -2,7 +2,7 @@
 /*
 * HTML Management
 */
-namespace App\LibPHP;
+namespace App\Lib;
 
 class Html
 {
@@ -17,7 +17,7 @@ class Html
     public static function surround($tag, $parram, $html)
     {
         if ($tag && $html) {
-            return "<{$tag} {$parram}>{$html}</{$tag}>\n";
+            return "<{$tag}{$parram}>{$html}</{$tag}>\n";
         } elseif ($html) {
             return $html;
         }

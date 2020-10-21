@@ -2,13 +2,13 @@
 /*
 * Debug Functions
 */
-namespace App\LibPHP;
+namespace App\Lib;
 
 class Debug
 {
 
     /*
-    * Debug::print_debug(new Debug);
+    * Debug::printDebug(new Debug);
     * die;
     */
     private $tab = [];
