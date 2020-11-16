@@ -83,10 +83,10 @@ class MyLib
     public static function loopTxt2ASCII(string $T = "HelloWorld", int $L = 4, int $H = 5) : ?string
     {
         $tmp = [];
-        $alpha = " !ABCDEFGHIJKLMNOPQRSTUVWXYZ?";
+        $alpha = " -!ABCDEFGHIJKLMNOPQRSTUVWXYZ?";
         $ROW = "\n";
         $tmp = str_split(trim($T));
-        $handle = @fopen(__DIR__ . "/../../../ascii.txt", "r");
+        $handle = @fopen(__DIR__ . "/../../ascii.txt", "r");
         if ($handle) {
             while ($buffer = stream_get_line($handle, 256 + 1, "\n")) {
                 foreach ($tmp as $c) {
@@ -103,7 +103,7 @@ class MyLib
                 die;
             }
             fclose($handle);
-            return Html::surround("h3", false, Html::surround("pre", false, $ROW));
+            return Html::surround("pre", false, $ROW);
         }
         return null;
     }
