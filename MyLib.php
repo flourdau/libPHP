@@ -103,7 +103,7 @@ class MyLib
                 die;
             }
             fclose($handle);
-            return Html::surround("pre", false, $ROW);
+            return $ROW;
         }
         return null;
     }
