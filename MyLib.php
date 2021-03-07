@@ -5,7 +5,19 @@
 namespace App\Lib;
 
 class MyLib
-{
+{ 
+    public static function confirm($str = "Voulez-vous continuez?")
+    {
+        while (True) {
+            $input = readline($str . " - (O)ui/(N)on - (Yes)/(N)o : ");
+            if ($input === 'o' || $input === 'y') {
+                return True;
+            } elseif ($input === 'n') {
+                return False;
+            }
+        }
+    }
+
     public static function checkCrypt($post = null, $pass = null)
     {
         return password_verify(hash('whirlpool', $post), $pass);
